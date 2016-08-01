@@ -3,4 +3,5 @@
     <string name="keep_walking_title_label">Title :</string>
     <string name="keep_walking_title_hint">Enter your title please</string>
     <string name="keep_walking_detail_label">Detail :</string>
+    <string name="detail">Detail :</string>
 </resources>

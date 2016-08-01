@@ -7,12 +7,4 @@
     tools:context=".KeepWalking">
 
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add"
-        android:background="#C2DFFF"
-        android:id="@+id/buttonAdd"
-        android:layout_alignParentBottom="true"
-        android:textSize="20sp" />
 </RelativeLayout>

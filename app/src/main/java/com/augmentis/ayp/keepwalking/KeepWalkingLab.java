@@ -27,12 +27,6 @@ public class KeepWalkingLab {
     private KeepWalkingLab(){
         keepWalkingList = new ArrayList<>();
 
-        for (int i = 0; i < 100; i++){
-            KeepWalking keepWalking = new KeepWalking();
-            keepWalking.setKeepWalkingTitle("KeepWalking #" + i);
-
-            keepWalkingList.add(keepWalking);
-        }
     }
 
 
@@ -71,4 +65,7 @@ public class KeepWalkingLab {
 
     }
 
+    public void addKeepWalking(KeepWalking keepWalking) {
+        keepWalkingList.add(keepWalking);
+    }
 }

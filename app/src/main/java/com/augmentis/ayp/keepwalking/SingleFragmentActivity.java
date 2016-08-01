@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +13,7 @@ import android.widget.Button;
 /**
  * Created by Apinya on 7/27/2016.
  */
-public abstract class SingleFragmentActivity extends FragmentActivity{
+public abstract class SingleFragmentActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,18 +32,7 @@ public abstract class SingleFragmentActivity extends FragmentActivity{
                     .add(R.id.fragment_container, f)
                     .commit();
             //
-        }else {
-            //
         }
-
-        Button btnAdd = (Button) findViewById(R.id.buttonAdd);
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SingleFragmentActivity.this, KeepWalkingFragment.class);
-                startActivity(intent);
-            }
-        });
 
     }
 

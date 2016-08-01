@@ -23,16 +23,17 @@ public class KeepWalkingFragment extends Fragment {
     private EditText editText;
     private Button DateButton;
     private Button SaveButton;
+    private KeepWalkingLab keepWalkingLab;
 
     private static final String KEEP_WALKING_ID = "KeepWalkingFragment.KEEP_WALKING_ID" ;
     private static final String KEEP_WALKING_POSITION = "KeepWalkingFragment.KEEP_WALKING_POSITION";
 
     public KeepWalkingFragment(){}
 
-    public static KeepWalkingFragment newInstance(UUID keepWalkingId, int position){
+    public static KeepWalkingFragment newInstance(UUID keepWalkingId){
         Bundle args = new Bundle();
         args.putSerializable(KEEP_WALKING_ID, keepWalkingId);
-        args.putInt(KEEP_WALKING_POSITION, position);
+//        args.putInt(KEEP_WALKING_POSITION, position);
 
         KeepWalkingFragment keepWalkingFragment = new KeepWalkingFragment();
         keepWalkingFragment.setArguments(args);
@@ -52,7 +53,12 @@ public class KeepWalkingFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_keep_walking,container,false);
+        View v = inflater.inflate(R.layout.fragment_keep_walking, container, false);
+
+//        if (keepWalking == null) {
+//            keepWalking = new KeepWalking();
+//            keepWalking.setKeepWalkingTitle("");
+//        }
 
         editText = (EditText) v.findViewById(R.id.keep_walking_title);
         editText.setText(keepWalking.getKeepWalkingTitle());
@@ -76,18 +82,17 @@ public class KeepWalkingFragment extends Fragment {
             }
         });
 
-        DateButton = (Button) v.findViewById(R.id.keep_walking_date);
-        DateButton.setText(getFormattedDate(keepWalking.getKeepWalkingDate()));
-        DateButton.setEnabled(false);
-
 
         SaveButton = (Button) v.findViewById(R.id.btnsave);
         SaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ////
+
+
             }
         });
+
+
         return v;
     }
 
